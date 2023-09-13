@@ -1,6 +1,6 @@
 import "./app.less";
 
-import { getCurrent } from "@tauri-apps/plugin-window";
+import { getCurrent, getAll } from "@tauri-apps/plugin-window";
 import { toggleDevtools } from "./commands";
 
 function App() {
@@ -15,12 +15,14 @@ function App() {
         maximize
       </button>
       <button onClick={toggleDevtools}>open devtools</button>
-
-      <div style={{ padding: 24, border: "1px solid red" }}>
-        <div contentEditable>
-          <p>This is a paragraph.</p>
-        </div>
-      </div>
+      <button
+        onClick={() => {
+          const wins = getAll();
+          wins.find((el) => el.label === "win2")?.show();
+        }}
+      >
+        Open second window
+      </button>
     </div>
   );
 }
