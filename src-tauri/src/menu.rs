@@ -39,6 +39,7 @@ pub fn setup_menu(
   // only for "win_1"
   let custom_menu = SubmenuBuilder::new(handle, "Test")
     .item(&MenuItemBuilder::with_id("toggle", "Toggle").build(handle))
+    .separator()
     .item(&CheckMenuItemBuilder::new("Mark").build(handle))
     .build()?;
 

@@ -1,7 +1,6 @@
-import { getCurrent } from "@tauri-apps/plugin-window";
-import { invoke } from "@tauri-apps/api";
+import { core, window as tauriWindow } from "@tauri-apps/api";
 
 export function toggleDevtools() {
-  const label = getCurrent().label;
-  invoke<void>("toggle_devtools", { label });
+  const label = tauriWindow.getCurrent().label;
+  core.invoke<void>("toggle_devtools", { label });
 }

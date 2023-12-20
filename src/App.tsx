@@ -1,6 +1,6 @@
 import "./app.less";
 
-import { getCurrent, getAll } from "@tauri-apps/plugin-window";
+import { window as tauriWindow } from "@tauri-apps/api";
 import { toggleDevtools } from "./commands";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div className="container">
       <button
         onClick={() => {
-          let win = getCurrent();
+          let win = tauriWindow.getCurrent();
           win.maximize();
         }}
       >
@@ -17,7 +17,7 @@ function App() {
       <button onClick={toggleDevtools}>open devtools</button>
       <button
         onClick={() => {
-          const wins = getAll();
+          const wins = tauriWindow.getAll();
           wins.find((el) => el.label === "win2")?.show();
         }}
       >
