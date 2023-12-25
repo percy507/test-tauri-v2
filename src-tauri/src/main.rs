@@ -9,6 +9,7 @@ mod menu;
 fn main() {
   tauri::Builder::default()
     .invoke_handler(tauri::generate_handler![cmds::toggle_devtools])
+    .plugin(tauri_plugin_fs::init())
     .on_window_event(|event| {
       let handle = event.window().app_handle();
       let label = event.window().label();

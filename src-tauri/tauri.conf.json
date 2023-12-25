@@ -45,5 +45,12 @@
         "visible": false
       }
     ]
+  },
+  "plugins": {
+    "fs": {
+      "scope": {
+        "allow": ["**", "**/*"]
+      }
+    }
   }
 }

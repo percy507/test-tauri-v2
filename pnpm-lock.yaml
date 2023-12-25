@@ -4,6 +4,9 @@ dependencies:
   '@tauri-apps/api':
     specifier: 2.0.0-alpha.13
     version: 2.0.0-alpha.13
+  '@tauri-apps/plugin-fs':
+    specifier: 2.0.0-alpha.5
+    version: 2.0.0-alpha.5
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -599,6 +602,12 @@ packages:
       '@tauri-apps/cli-win32-ia32-msvc': 2.0.0-alpha.20
       '@tauri-apps/cli-win32-x64-msvc': 2.0.0-alpha.20
     dev: true
+
+  /@tauri-apps/plugin-fs@2.0.0-alpha.5:
+    resolution: {integrity: sha512-7qRbP+BfSCxjQX2DQJ4rUk5vxP8jgnOELUI4EZavwsfKor5ebX1oKy4k42jF5uZSm+o5XS/yvoASUFFbSSWlkw==}
+    dependencies:
+      '@tauri-apps/api': 2.0.0-alpha.13
+    dev: false
 
   /@types/prop-types@15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
