@@ -7,6 +7,9 @@ license = ""
 repository = ""
 edition = "2021"
 
+[http]
+multiplexing=false
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [build-dependencies]
@@ -27,6 +30,7 @@ tauri-plugin-shell = "2.0.0-alpha.6"
 tauri-plugin-window-state = "2.0.0-alpha.6"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
+window-shadows = "0.2.1"
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem

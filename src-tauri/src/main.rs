@@ -4,6 +4,7 @@
 use tauri_plugin_log::{Target, TargetKind};
 
 mod cmds;
+mod ui;
 
 fn main() {
   let mut app = tauri::Builder::default()
@@ -27,7 +28,7 @@ fn main() {
     .plugin(tauri_plugin_window_state::Builder::default().build())
     .invoke_handler(tauri::generate_handler![cmds::toggle_devtools])
     .setup(|app| {
-      // do something
+      ui::show_win1(app.handle());
       Ok(())
     })
     .build(tauri::generate_context!())
