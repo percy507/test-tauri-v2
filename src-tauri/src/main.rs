@@ -18,6 +18,7 @@ fn main() {
           Target::new(TargetKind::Stdout),
           Target::new(TargetKind::Webview),
         ])
+        .filter(|meta| !meta.target().contains("tao::"))
         .build(),
     )
     .plugin(tauri_plugin_clipboard_manager::init())
@@ -28,7 +29,7 @@ fn main() {
     .plugin(tauri_plugin_window_state::Builder::default().build())
     .invoke_handler(tauri::generate_handler![cmds::toggle_devtools])
     .setup(|app| {
-      ui::show_win1(app.handle());
+      ui::show_win_1(app.handle());
       Ok(())
     })
     .build(tauri::generate_context!())

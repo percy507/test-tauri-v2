@@ -1,13 +1,14 @@
 use std::path::PathBuf;
-use tauri::{AppHandle, WindowBuilder, WindowUrl};
+use tauri::{AppHandle, WebviewUrl, WebviewWindowBuilder};
 
-pub fn show_win1(handle: &AppHandle) {
-  let url = WindowUrl::App(PathBuf::from("/"));
-  let builder = WindowBuilder::new(handle, "win1", url)
+pub fn show_win_1(handle: &AppHandle) {
+  let label = "win_1";
+  let url = WebviewUrl::App(PathBuf::from("/"));
+  let builder = WebviewWindowBuilder::new(handle, label, url)
     .title("win-title1")
     .inner_size(600.into(), 400.into())
     .min_inner_size(600.into(), 400.into())
-    .disable_file_drop_handler()
+    .disable_drag_drop_handler()
     .visible(false)
     .focused(true);
 
@@ -17,13 +18,12 @@ pub fn show_win1(handle: &AppHandle) {
     builder
       .hidden_title(true)
       .title_bar_style(TitleBarStyle::Overlay)
-      .menu(Menu::default(handle).unwrap_or(Menu::new(handle)))
+      .menu(Menu::default(handle).unwrap())
   };
 
   let win = builder.build().unwrap();
 
-  #[cfg(any(windows, target_os = "macos"))]
-  window_shadows::set_shadow(&win, true).unwrap();
+  win.set_shadow(true).unwrap();
   #[cfg(target_os = "windows")]
   win.set_decorations(false).unwrap();
 

@@ -16,7 +16,9 @@ export default function App() {
   }, [win]);
 
   return (
-    <div>
+    <div className="app-root">
+      <div className="time-now">{new Date().toISOString()}</div>
+
       {isWindows && (
         <div className="titlebar" data-tauri-drag-region>
           {title}
@@ -25,7 +27,6 @@ export default function App() {
 
       <div className="btns">
         <button onClick={toggleDevtools}>open devtools</button>
-        <button onClick={() => win.close()}>close window</button>
       </div>
     </div>
   );
