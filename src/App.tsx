@@ -16,20 +16,21 @@ export default function App() {
   }, [win]);
 
   return (
-    <div className="app-root">
-      <div className="time-now">{new Date().toISOString()}</div>
-
+    <div>
       {isWindows && (
         <div className="titlebar" data-tauri-drag-region>
           {title}
         </div>
       )}
 
-      <div className="btns">
-        <button onClick={toggleDevtools}>open devtools</button>
-      </div>
+      <div className="content">
+        <div className="time-now">{new Date().toISOString()}</div>
+        <div className="btns">
+          <button onClick={toggleDevtools}>open devtools</button>
+        </div>
 
-      <TestCase />
+        <TestCase />
+      </div>
     </div>
   );
 }
