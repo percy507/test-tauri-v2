@@ -28,6 +28,17 @@ export default function App() {
       <div className="btns">
         <button onClick={toggleDevtools}>open devtools</button>
       </div>
+
+      <TestCase />
+    </div>
+  );
+}
+
+function TestCase() {
+  return (
+    <div className="testCase">
+      <div className="testCase-title">Demo</div>
+      <div className="testCase-content">content</div>
     </div>
   );
 }
