@@ -6,8 +6,8 @@ pub fn show_win_1(handle: &AppHandle) {
   let url = WebviewUrl::App(PathBuf::from("/"));
   let builder = WebviewWindowBuilder::new(handle, label, url)
     .title("win-title1")
-    .inner_size(600.into(), 400.into())
-    .min_inner_size(600.into(), 400.into())
+    .inner_size(1000.into(), 800.into())
+    .min_inner_size(1000.into(), 800.into())
     .disable_drag_drop_handler()
     .visible(false)
     .focused(true);
